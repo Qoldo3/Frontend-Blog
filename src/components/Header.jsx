@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import AuthModal from './AuthModal';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const { user, logout } = useAuth();
@@ -23,15 +24,17 @@ function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            <a href="#" className="text-lg text-gray-600 hover:text-gray-900 font-medium transition">
+            <Link to="#" className="text-lg text-gray-600 hover:text-gray-900 font-medium transition">
               Home
-            </a>
-            <a href="#" className="text-lg text-gray-600 hover:text-gray-900 font-medium transition">
+            </Link>
+            <Link to="#" className="text-lg text-gray-600 hover:text-gray-900 font-medium transition">
               About
-            </a>
-            <a href="#" className="text-lg text-gray-600 hover:text-gray-900 font-medium transition">
+            </Link>
+            <Link to="#" className="text-lg text-gray-600 hover:text-gray-900 font-medium transition">
               Archive
-            </a>
+            </Link>
+            <Link to="/" className="...">Home</Link>
+            <Link to="/profile" className="...">Profile</Link>
 
             {user ? (
               <div className="flex items-center space-x-6">
@@ -81,15 +84,15 @@ function Header() {
               </button>
 
               <div className="mt-20 flex flex-col space-y-8">
-                <a href="#" className="text-2xl font-medium text-gray-800 hover:text-indigo-600 transition">
+                <Link to="#" className="text-2xl font-medium text-gray-800 hover:text-indigo-600 transition">
                   Home
-                </a>
-                <a href="#" className="text-2xl font-medium text-gray-800 hover:text-indigo-600 transition">
+                </Link>
+                <Link to="#" className="text-2xl font-medium text-gray-800 hover:text-indigo-600 transition">
                   About
-                </a>
-                <a href="#" className="text-2xl font-medium text-gray-800 hover:text-indigo-600 transition">
+                </Link>
+                <Link to="#" className="text-2xl font-medium text-gray-800 hover:text-indigo-600 transition">
                   Archive
-                </a>
+                </Link>
 
                 <div className="border-t border-gray-200 pt-8">
                   {user ? (
